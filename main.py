@@ -1,9 +1,7 @@
+#! usr/bin/python3
 import praw
-import time
-import os
 import re
 from common import clear
-from praw.models import Comment
 
 
 
@@ -30,8 +28,12 @@ def check_comments():
         if re.search(phrase_to_lookup ,comment.body, re.IGNORECASE):
             times_said_in_comments += 1
 
-check_submissions()
-check_comments()
+
+def check_all():
+    check_submissions()
+    check_comments()
+
+check_all()
 clear()
 
 print(username_of_redditor,"said",phrase_to_lookup, times_said_in_posts,"time(s) in posts.\n")
