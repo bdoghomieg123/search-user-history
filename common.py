@@ -1,5 +1,4 @@
-import time
-import random
+#! usr/bin/python3
 import os
 import platform
 
