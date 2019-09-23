@@ -1,5 +1,4 @@
-import time
-import random
+#! usr/bin/pytohn3
 import os
 import platform
 
