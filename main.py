@@ -1,5 +1,6 @@
 #! usr/bin/python3
 import re
+import threading
 
 import praw
 
@@ -27,11 +28,14 @@ def check_comments():
 
 
 def check_all():
-    check_submissions()
-    check_comments()
+    thread1 = threading.Thread(target=check_submissions)
+    thread2 = threading.Thread(target=check_comments)
+    thread1.start()
+    thread2.start()
+    thread1.join()
+    thread2.join()
+    print(username_of_redditor, "said", phrase_to_lookup, times_said_in_posts, "time(s) in posts.\n")
+    print(username_of_redditor, "said", phrase_to_lookup, times_said_in_comments, "time(s) in comments.\n")
 
 
 check_all()
-
-print(username_of_redditor, "said", phrase_to_lookup, times_said_in_posts, "time(s) in posts.\n")
-print(username_of_redditor, "said", phrase_to_lookup, times_said_in_comments, "time(s) in comments.\n")
