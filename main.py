@@ -3,13 +3,10 @@ import re
 
 import praw
 
-from common import clear
-
 reddit = praw.Reddit('bot1')
 
 username_of_redditor = input("What reddit user would you like to use this program on?")
 phrase_to_lookup = input("What would you like to look for in this person's post history?")
-clear()
 print("Program checking user's history...")
 
 
@@ -19,8 +16,6 @@ def check_submissions():
     for submission in reddit.redditor(username_of_redditor).submissions.new(limit=None):
         if re.search(phrase_to_lookup, submission.selftext, re.IGNORECASE):
             times_said_in_posts += 1
-            if re.search(phrase_to_lookup, submission.title, re.IGNORECASE):
-                times_said_in_posts += 1
 
 
 def check_comments():
@@ -37,7 +32,6 @@ def check_all():
 
 
 check_all()
-clear()
 
 print(username_of_redditor, "said", phrase_to_lookup, times_said_in_posts, "time(s) in posts.\n")
 print(username_of_redditor, "said", phrase_to_lookup, times_said_in_comments, "time(s) in comments.\n")
