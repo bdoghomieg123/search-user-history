@@ -24,7 +24,7 @@ To use this program, follow these instructions:
     - password: your reddit password
     - username: your reddit username
     - user_agent: Enter jibberish here. I just put "Idk" (without the quotes.)
-- Run the main.py program. (As of 8/4/19. The inbox reader is broken. Feel free to read my shit code. Godspeed if you attempt to fix it.)
+- Run the main.py program.
 - Text editor: If you don't have any special text editor other than notepad, I recommend geany. It's easier to run programs in geany. install geany from here: https://www.geany.org/download/releases/
 - Open the program in geany. To run program in geany, simply press the F5 key.
 - Thank You and I hope you enjoy this program!
